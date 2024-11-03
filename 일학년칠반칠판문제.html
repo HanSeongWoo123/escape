@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제 풀기</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        p {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>문제: 5 + 3 = ?</h2>
+        <input type="text" id="answer" placeholder="정답을 입력하세요">
+        <button onclick="checkAnswer()">제출</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const userAnswer = document.getElementById('answer').value;
+            const result = document.getElementById('result');
+            const nextPageUrl = './일학년칠반칠판정답.html'; // 여기서 URL을 수정하세요.
+
+            if (userAnswer == 8) {
+                window.location.href = nextPageUrl; // 정답일 때 다음 페이지로 이동
+            } else {
+                result.textContent = '틀렸습니다. 다시 시도하세요!';
+                result.style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html>
